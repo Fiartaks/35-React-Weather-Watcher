@@ -1,0 +1,147 @@
+#root {
+  margin: 0 ;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(#053fa3, #75c3e8);
+  min-height: 100vh;
+  animation: backgroundSweep 6s linear infinite alternate;
+}
+
+.app-container {
+  width: 500px;
+  position: absolute; 
+  left: 30%;
+  top: 20%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  background: linear-gradient(to top, #a6b7d4, #5fbae5);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  animation: popUp 1.5s ease-out forwards;
+}
+
+.app-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.location-input {
+  padding: 13px;
+  width: 90%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  animation: pulse 2s infinite;
+}
+
+.location-input:focus {
+  box-shadow: 0 0 12px rgba(0, 173, 255, 0.5);
+  outline: none;
+  transform: scale(1.02);
+}
+
+.weather-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.day-container {
+  margin: 14px;
+  margin-top: 26rem;
+  padding: 20px;
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background: linear-gradient(135deg, #ffecb3, #e9cbc2);
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: wobble 3s ease-in-out infinite;
+}
+
+.day-container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.temperature {
+  font-size: 20px;
+  color: #00574b;
+  margin: 8px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.temperature:hover {
+  color: #003d33;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+}
+
